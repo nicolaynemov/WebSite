@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="cen">Регистрация</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control", type="email") }}<br>
+        {% for error in form.email.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(class="form-control") }}<br>
+        {% for error in form.name.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(class="form-control", type="password") }}<br>
+        {% for error in form.password.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+  <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+    <p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Помощь
+  </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Для регистрации в программе "Помощник учителя" Вам нужно указать свой email, никнейм и пароль. <br>
+          Требования для email: <br>
+          Email должен быть корректен и не использован ранее в системе. <br>
+          Требования для никнейма: <br>
+          Никнейм должен быть не короче 4х символов и не использован ранее в системе. <br>
+          Требования для пароля: <br>
+          Пароль должен быть не короче 8 символов, содержать хотя бы одну заглавную букву и хотя бы одну цифру.
+      </div>
+    </div>
+    </div>
+</form>
+{% endblock %}

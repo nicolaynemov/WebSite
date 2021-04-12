@@ -1,3 +1,6 @@
+import datetime
+
+import sqlalchemy
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from werkzeug.utils import redirect
@@ -5,6 +8,8 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextA
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
 from data import db_session
+from data.db_session import SqlAlchemyBase
+#from data.users import User
 
 
 class LoginForm(FlaskForm):
@@ -16,10 +21,8 @@ class LoginForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
     email = EmailField('Почта', validators=[DataRequired()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    password_again = PasswordField('Повторите пароль', validators=[DataRequired()])
     name = StringField('Имя пользователя', validators=[DataRequired()])
-    about = TextAreaField("Немного о себе")
+    password = PasswordField('Пароль', validators=[DataRequired()])
     submit = SubmitField('Войти')
 
 
@@ -43,12 +46,17 @@ def login():
 
 @app.route('/registration')
 def registration():
-    form = LoginForm()
+    form = RegisterForm()
     if form.validate_on_submit():
         return redirect('/success')
     return render_template('registration.html', title='Регистрация', form=form)
 
 
+@app.route('/program')
+def prog():
+    return render_template('mainmenu.html', title='Помощник учителя')
+
+
 if __name__ == '__main__':
-    db_session.global_init("db/blogs.db")
+    #db_session.global_init("db/blogs.db")
     app.run(port=8080, host='127.0.0.1')

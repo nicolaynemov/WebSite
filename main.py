@@ -54,7 +54,33 @@ def registration():
 
 @app.route('/program')
 def prog():
-    return render_template('mainmenu.html', title='Помощник учителя')
+    c = ['10Б', '10Г', '10Д']
+    student = [['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Дарья', 'Иванова', '15.12.2004', 'ж', 'example@example.com', '9534837485', 'Иванов Андрей'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],
+               ['-', 'Фёдор', 'Соколов', '03.04.2004', 'м', 'example@example.com', '9846734848', 'Соколов Олег'],]
+    length = len(student)
+    return render_template('mainmenu.html', title='Помощник учителя', classes=c, students=student, a=length)
+
+
+@app.route('/classes')
+def classes():
+    c = [['-', '10Б'], ['-', '10Г'], ['-', '10Д']]
+    length = len(c)
+    return render_template('classes.html', title='Работа с классами', classes=c, a=length)
+
+
+@app.route('/about')
+def about():
+    c = [['-', '10Б'], ['-', '10Г'], ['-', '10Д']]
+    length = len(c)
+    return render_template('about.html', title='Помощь в работе', classes=c, a=length)
 
 
 if __name__ == '__main__':

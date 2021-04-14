@@ -21,3 +21,36 @@
     display: inline
 }
 
+.text {
+    color: #5F5AC1
+}
+
+.tablestyle {
+    width: 880px;
+    background-color: #FFFFFF
+}
+
+.trstyle {
+    padding: 20px
+}
+
+.thstyle {
+    width: 10%
+}
+
+.menu {
+    float: right;
+    width = 150px;
+    margin-top: 20px
+}
+
+.tablestyle1 {
+    width: 300px;
+    background-color: #FFFFFF
+}
+
+.txt {
+    text-align: justify;
+}
+
+

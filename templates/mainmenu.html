@@ -2,27 +2,144 @@
 
 {% block content %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="nav flex-column">
+  <li class="nav-item">
+    <div class="container-fluid">
+    <a class="navbar-brand">Помощник учителя</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
     </div>
+  </li>
+  <li class="nav-item">
+    <ul class="nav">
+      <li class="nav-item">
+    <a class="btn btn-primary" style="margin-left: 10px" href="http://127.0.0.1:8080/classes" role="button">Классы</a>
+  </li>
+  <li class="nav-item">
+    <div class="btn-group">
+  <button style="margin-left: 10px" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Настройки
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Аккаунт</a>
+    <a class="dropdown-item" href="#">Внешний вид</a>
   </div>
+</div>
+  </div>
+  </li>
+  <li class="nav-item">
+    <button style="margin-left: 10px" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    О программе
+  </button>
+  <div class="dropdown-menu" style="margin-left: 30px">
+    <a class="dropdown-item" href="http://127.0.0.1:8080/about">Помощь в работе</a>
+    <a class="dropdown-item" href="#">Обратная связь</a>
+    <label>______________________________________________________________________________________________________________________________________________________________</label>
+    <a class="dropdown-item" aria-disabled="true">Данная программа была разработана учениками Яндекс.Лицея для помощи учителям в их важном и ответственном деле. <br>
+    Она находится в свободном доступе и каждый имеет право на её использование в своих целях</a>
+  </div>
+  </li>
+</ul>
+  </li>
+</ul>
 </nav>
+<label></label>
+
+<div class="menu">
+  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px">Открыть МЭШ</a> <br>
+  <a class="btn btn-primary" href="http://127.0.0.1:8080/login" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Выйти из аккаунта</a>
+  <h6 class="text" style="width: 200px; margin-right: 10px; margin-top: 60px;">Полезные инструменты:</h6>
+  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Калькулятор</a> <br>
+  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Mini Paint</a> <br>
+  <h6 class="text" style="width: 200px; margin-right: 10px; margin-top: 60px;">Работа с записями:</h6>
+  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Напоминания</a> <br>
+  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Ссылки</a> <br>
+  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Заметки</a>
+</div>
+
+<ul class="nav flex-column">
+  <li class="nav-item">
+        <ul class="nav">
+      <li class="nav-item">
+        <h4 class="text">Класс:</h4>
+      </li>
+      <li class="nav-item" style="margin-left: 10px; margin-top: 5px">
+        <select class="text">
+          {% for i in classes %}
+          <option class="text">{{ i }}</option>
+          {% endfor %}
+        </select>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <ul class="nav">
+      <li class="nav-item">
+        <h6 class="text" style="margin-top: 10px">Сортировать по:</h6>
+      </li>
+      <li class="nav-item" style="margin-left: 10px; margin-top: 5px">
+        <select class="text">
+          <option class="text">Фамилии</option>
+          <option class="text">Имени</option>
+          <option class="text">Дате рождения</option>
+          <option class="text">Полу (мальчики)</option>
+          <option class="text">Полу (девочки)</option>
+        </select>
+      </li>
+      <li class="nav-item">
+        <h4 class="text" style="margin-left: 100px; margin-top: 5px">Поиск ученика:</h4>
+      </li>
+      <li class="nav-item" style="margin-left: 10px; margin-top: 5px">
+        <textarea class="form-control text" id="exampleFormControlTextarea1" rows="1" style="resize: none"></textarea>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+      <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+    <label class="form-check-label text" for="flexCheckChecked">
+      Показывать в обратном порядке
+    </label>
+      </div>
+  </li>
+  <li class="nav-item">
+    <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+    <label class="form-check-label text" for="flexCheckChecked">
+      Выбрать всех
+    </label>
+      </div>
+  </li>
+</ul>
+<label></label>
+<table border="1" class="tablestyle">
+  <tr class="trstyle">
+    <th class="thstyle text cen">Выбрать</th>
+    <th class="thstyle text cen">Имя</th>
+    <th class="thstyle text cen">Фамилия</th>
+    <th class="thstyle text cen">Дата рождения</th>
+    <th class="thstyle text cen">Пол</th>
+    <th class="thstyle text cen">Email</th>
+    <th class="thstyle text cen">Телефон</th>
+    <th class="thstyle text cen">Родители</th>
+  </tr>
+  {% for i in range(a) %}
+  <tr>
+    {% for j in students[i] %}
+      {% if j == '-' %}
+        <td class="thstyle">
+          <input type="checkbox" style="margin-left: 45%">
+        </td>
+      {% else %}
+      <th>
+        {{ j }}
+      </th>
+      {% endif %}
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+<a class="btn btn-primary" href="#" role="button" style="width: 880px; margin-right: 10px; margin-top: 20px;">Продолжить</a> <br>
+<label></label>
 {% endblock %}

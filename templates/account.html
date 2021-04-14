@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://127.0.0.1:8080/program"><-- Назад</a>
+  </div>
+</nav>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <label></label>
+  </li>
+  <li class="nav-item">
+      <nav class="nav">
+        <h4 class="text" style="margin-top: 5px">Текущий никнейм:</h4>
+        <textarea class="form-control text" id="exampleFormControlTextarea1" rows="1" style="resize: none; width: 600px; margin-left: 70px"></textarea>
+        <button class="btn btn-primary" role="button" style="width: 150px; margin-left: 77px;">Изменить</button>
+      </nav>
+  </li>
+  <li class="nav-item">
+    <label></label>
+  </li>
+  <li class="nav-item">
+    <nav class="nav">
+        <h4 class="text" style="margin-top: 5px">Текущий email:</h4>
+        <textarea class="form-control text" id="exampleFormControlTextarea2" rows="1" style="resize: none; width: 600px; margin-left: 110px"></textarea>
+        <button class="btn btn-primary" role="button" style="width: 150px; margin-left: 77px;">Изменить</button>
+      </nav>
+  </li>
+  <li class="nav-item">
+    <label></label>
+  </li>
+  <li class="nav-item">
+    <nav class="nav">
+        <h4 class="text" style="margin-top: 5px">Текущий пароль:</h4>
+        <button class="btn btn-primary" role="button" style="resize: none; width: 600px; margin-left: 90px">Узнать</button>
+        <button class="btn btn-primary" role="button" style="width: 150px; margin-left: 77px;">Изменить</button>
+      </nav>
+  </li>
+  <li>
+    <p class="text">Нажав "Узнать", на email придёт письмо, в котором будет указан пароль.</p>
+  </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <ul class="nav flex-column">
+  <li class="nav-item">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:8080/program"><-- Назад</a>
+    </div>
+  </li>
+  <li class="nav-item">
+      <ul class="nav">
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#" role="button">Отправка писем</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#" role="button" style="margin-left: 297px">Создание документов</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#" role="button" style="margin-left: 297px">Просмотр досье</a>
+          </li>
+        </ul>
+  </li>
+</ul>
+</nav>
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <label></label>
+  </li>
+  <li class="nav-item">
+      <nav class="nav">
+        <h4 class="text" style="margin-top: 5px">Тема письма:</h4>
+        <textarea class="form-control text" id="exampleFormControlTextarea1" rows="1" style="resize: none; width: 400px; margin-left: 70px"></textarea>
+      </nav>
+  </li>
+    <li class="nav-item">
+    <label></label>
+  </li>
+      <li class="nav-item">
+      <nav class="nav">
+        <div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <h4 class="text" style="margin-top: 5px">Текст письма:</h4>
+            </li>
+            <li class="nav-item">
+              <textarea class="form-control text" id="exampleFormControlTextarea12" rows="20" style="resize: none; width: 500px;"></textarea>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" role="button" style="width: 500px;">Отправить</button>
+            </li>
+          </ul>
+        </div>
+        <div style="margin-left: 140p">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <h4 class="text" style="margin-top: 5px; margin-left: 100px">Получатель:</h4>
+            </li>
+            <li class="nav-item">
+              <textarea class="form-control text" id="exampleFormControlTextarea123" rows="20" style="resize: none; width: 500px; margin-left: 100px">{{ person }}</textarea>
+            </li>
+            <li class="nav-item">
+              <form>
+                  <div class="form-group">
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" style="width: 500px; margin-left: 100px">
+                  </div>
+                </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </li>
+</ul>
+{% endblock %}

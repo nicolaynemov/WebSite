@@ -83,6 +83,17 @@ def about():
     return render_template('about.html', title='Помощь в работе', classes=c, a=length)
 
 
+@app.route('/account')
+def acc():
+    return render_template('account.html', title='Аккаунт')
+
+
+@app.route('/send')
+def send():
+    a = 'Александ Иванов\nДарья Кузнецова' # передавать получателей как строку с разделителями для отображения
+    return render_template('send.html', title='Рассылка', person=a)
+
+
 if __name__ == '__main__':
     #db_session.global_init("db/blogs.db")
     app.run(port=8080, host='127.0.0.1')

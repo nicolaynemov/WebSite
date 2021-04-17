@@ -53,4 +53,21 @@
     text-align: justify;
 }
 
+.tablestyle2 {
+    width: 460px;
+    background-color: #FFFFFF
+}
 
+.tablestyle3 {
+    width: 600px;
+    background-color: #FFFFFF;
+    table-layout: fixed;
+}
+
+.trstyle3 {
+    padding: 20px
+}
+
+.thstyle3 {
+    width: 10%
+}

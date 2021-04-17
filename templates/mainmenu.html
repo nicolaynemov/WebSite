@@ -23,7 +23,6 @@
   </button>
   <div class="dropdown-menu">
     <a class="dropdown-item" href="http://127.0.0.1:8080/account">Аккаунт</a>
-    <a class="dropdown-item" href="#">Внешний вид</a>
   </div>
 </div>
   </div>
@@ -34,12 +33,15 @@
   </button>
   <div class="dropdown-menu" style="margin-left: 30px">
     <a class="dropdown-item" href="http://127.0.0.1:8080/about">Помощь в работе</a>
-    <a class="dropdown-item" href="#">Обратная связь</a>
+    <a class="dropdown-item" href="http://127.0.0.1:8080/feedback">Обратная связь</a>
     <label>______________________________________________________________________________________________________________________________________________________________</label>
     <a class="dropdown-item" aria-disabled="true">Данная программа была разработана учениками Яндекс.Лицея для помощи учителям в их важном и ответственном деле. <br>
     Она находится в свободном доступе и каждый имеет право на её использование в своих целях</a>
   </div>
   </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" style="margin-left: 510px; width: 190px">Скачать программу</button>
+      </li>
 </ul>
   </li>
 </ul>
@@ -47,15 +49,14 @@
 <label></label>
 
 <div class="menu">
-  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px">Открыть МЭШ</a> <br>
+  <a class="btn btn-primary" href="https://dnevnik.mos.ru/" role="button" style="width: 200px; margin-right: 10px; margin-top:20px">Открыть МЭШ</a> <br>
   <a class="btn btn-primary" href="http://127.0.0.1:8080/login" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Выйти из аккаунта</a>
   <h6 class="text" style="width: 200px; margin-right: 10px; margin-top: 60px;">Полезные инструменты:</h6>
-  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Калькулятор</a> <br>
-  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Mini Paint</a> <br>
+  <button class="btn btn-primary" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Калькулятор</button> <br>
   <h6 class="text" style="width: 200px; margin-right: 10px; margin-top: 60px;">Работа с записями:</h6>
-  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Напоминания</a> <br>
-  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Ссылки</a> <br>
-  <a class="btn btn-primary" href="#" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Заметки</a>
+  <a class="btn btn-primary" href="http://127.0.0.1:8080/remind" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Напоминания</a> <br>
+  <a class="btn btn-primary" href="http://127.0.0.1:8080/links" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Ссылки</a> <br>
+  <a class="btn btn-primary" href="http://127.0.0.1:8080/notes" role="button" style="width: 200px; margin-right: 10px; margin-top: 20px;">Заметки</a>
 </div>
 
 <ul class="nav flex-column">
@@ -97,7 +98,7 @@
   </li>
   <li class="nav-item">
       <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked1">
     <label class="form-check-label text" for="flexCheckChecked">
       Показывать в обратном порядке
     </label>
@@ -132,9 +133,9 @@
           <input type="checkbox" style="margin-left: 45%">
         </td>
       {% else %}
-      <th>
+      <td style="text-overflow: ellipsis; overflow: hidden">
         {{ j }}
-      </th>
+      </td>
       {% endif %}
     {% endfor %}
   </tr>

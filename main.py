@@ -94,6 +94,32 @@ def send():
     return render_template('send.html', title='Рассылка', person=a)
 
 
+@app.route('/feedback')
+def feedback():
+    return render_template('feedback.html', title='Обратная связь')
+
+
+@app.route('/remind')
+def remind():
+    reminds = [['-', '10.12.2020', '19:32', 'ДЗ'], ['-', '09.11.2021', '7:34', 'Школа']]
+    length = len(reminds)
+    return render_template('remind.html', title='Напоминания', rem=reminds, a=length)
+
+
+@app.route('/links')
+def links():
+    link = [['-', 'ДЗ', '19:32', 'http://127.0.0.1:8080/program'], ['-', 'Школа', '7:34', 'http://127.0.0.1:8080/program']]
+    length = len(link)
+    return render_template('links.html', title='Ссылки', rem=link, a=length)
+
+
+@app.route('/notes')
+def notes():
+    note = [['-', 'ДЗ', '19:32'], ['-', 'Школа', '7:34']]
+    length = len(note)
+    return render_template('notes.html', title='Заметки', rem=note, a=length)
+
+
 if __name__ == '__main__':
     #db_session.global_init("db/blogs.db")
     app.run(port=8080, host='127.0.0.1')

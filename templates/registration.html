@@ -31,11 +31,27 @@
             </p>
         {% endfor %}
     </p>
+    <ul class="nav">
+      <li class="nav-item">
+        <p>
+            {{ form.code.label }}<br>
+            {{ form.code(class="form-control", type="password") }}<br>
+            {% for error in form.code.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" style="margin-top: 33px; margin-left: 20px">Отправить код</button>
+      </li>
+    </ul>
     <div class="btn-group" role="group" aria-label="Basic example">
   <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
     {{message}}
     <p>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-left: 20px">
     Помощь
   </button>
     </p>

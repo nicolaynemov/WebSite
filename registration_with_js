@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="cen">Регистрация</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control", type="email", onkeyup="checkParams()") }}<br>
+        {% for error in form.email.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(class="form-control", onkeyup="checkParams()") }}<br>
+        {% for error in form.email.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.password_again.label }}<br>
+        {{ form.password_again(class="form-control", type="password", onkeyup="checkParams()") }}<br>
+        {% for error in form.password.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <ul class="nav">
+      <li class="nav-item">
+        <p>
+            {{ form.code.label }}<br>
+            {{ form.code(class="form-control", onkeyup="checkParams()") }}<br>
+            {% for error in form.code.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </p>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" id="passwordf3" onclick="sendcodejs()" style="margin-top: 33px; margin-left: 20px" disabled>Отправить код</button>
+      </li>
+    </ul>
+    <div class="btn-group" role="group" aria-label="Basic example">
+  <p>{{ form.submit(type="submit", class="btn btn-primary", disabled=true) }}</p>
+    {{message}}
+    <p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-left: 20px">
+    Помощь
+  </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Для регистрации в программе "Помощник учителя" Вам нужно указать свой email, никнейм и пароль. <br>
+          Требования для email: <br>
+          Email должен быть корректен и не использован ранее в системе. <br>
+          Требования для никнейма: <br>
+          Никнейм должен быть не короче 4х символов и не использован ранее в системе. <br>
+          Требования для пароля: <br>
+          Пароль должен быть не короче 8 символов, содержать хотя бы одну заглавную букву и хотя бы одну цифру.
+      </div>
+    </div>
+    </div>
+    <script> function sendcodejs() {
+                  const em = document.querySelector('#emailf').value;
+                  const pa = document.querySelector('#passwordf').value;
+                  const request = new XMLHttpRequest();
+                  request.open('POST', '/code' + '/' + em + '/' + pa);
+                  request.onload = () => {
+
+              // Извлечение данных JSON из запроса
+              const data = JSON.parse(request.responseText);
+
+
+
+          }
+                  const data = new FormData();
+                  request.send(data);
+                  return false;
+
+};
+function checkParams() {
+    let email = document.querySelector('#emailf').value;
+    let p1 = document.querySelector('#passwordf').value;
+    let p2 = document.querySelector('#passwordf2').value;
+    let p3 = document.querySelector('#code_sub').value;
+    let b1 = document.querySelector('#passwordf3');
+    let b2 = document.querySelector('#okbtn');
+    if(email.length != 0 && p2.length != 0 && p2.length != 0) {
+        b1.disabled = false;
+    } else {
+        b1.disabled = true;
+            }
+    if (p3.length != 0){
+        b1.disabled = true;
+    }
+    if(email.length != 0 && p1.length != 0 && p2.length != 0 && p3.length != 0) {
+        b2.disabled = false;
+    } else {
+        b2.disabled = true;
+            }
+
+}</script>
+</form>
+{% endblock %}
